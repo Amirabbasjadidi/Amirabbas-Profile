@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Light.ttf') format('truetype');
+    font-weight: light;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #00bfff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin-top: 40px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-link:hover img {
+    transform: scale(1.2);
+}
+
+.icon-link:active img {
+    transform: scale(1.1);
+}
+
+.icon-link:focus img {
+    outline: none;
+}
+
+#typed-text {
+    color: #00bfff;
+    font-weight: bold;
+}
+
+.custom-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    width: 300px; 
+}
+
+.custom-dialog.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dialog-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dialog-text {
+    margin-bottom: 20px;
+}
+
+#dialog-ok-button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#dialog-ok-button:hover {
+    background-color: #ff6347;
+}
+
+.made-by {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+.made-by a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.made-by a:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 370px) {
+    .social-icons a {
+        margin: 5px;
+    }
+
+    .made-by {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .made-by a {
+        display: block;
+    }
+}
