@@ -142,7 +142,7 @@ h2 {
     transform: scale(1.2);
 }
 
-@media (max-width: 370px) {
+@media (hover: none) and (pointer: coarse) {
     .social-icons a {
         margin: 5px;
     }
