@@ -2,12 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var options = {
         strings: [
             "Python Programmer🐍",
-            "Web Designer💻",
+            "JS Developer✨",
+            "Backend Developer🛠️",
             "Telegram Bot Developer🚀👨‍💻",
+            "Dart & Flutter Fan🦄📱",
             "FOSS Enthusiast🔥",
             "GNU/Linux Enthusiast🐧",
             "AI and ML Enthusiast🤖",
             "Open Source Contributor🌐",
+            "Cinephile🎬",
             "Counter Strike Player⌨️🖱️"
         ],
         typeSpeed: 50,
