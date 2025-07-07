@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "JS Developer✨",
             "Backend Developer🛠️",
             "Telegram Bot Developer🚀👨‍💻",
-            "Dart & Flutter Fan🦄📱",
+            "Dart and Flutter Fan🦄📱",
             "FOSS Enthusiast🔥",
             "GNU/Linux Enthusiast🐧",
             "AI and ML Enthusiast🤖",
