@@ -126,6 +126,7 @@ h2 {
 }
 
 .made-by {
+    position: fixed;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -152,4 +153,5 @@ h2 {
         display: block;
     }
 }
+
 
