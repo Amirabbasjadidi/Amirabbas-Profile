@@ -126,9 +126,10 @@ h2 {
 }
 
 .made-by {
-    position: fixed;
     bottom: 10px;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .made-by a {
@@ -147,14 +148,8 @@ h2 {
         margin: 5px;
     }
 
-    .made-by {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-
     .made-by a {
         display: block;
     }
 }
+
