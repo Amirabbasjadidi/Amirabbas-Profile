@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     var options = {
         strings: [
-            "Python Programmer🐍",
-            "JS Developer✨",
             "Backend Developer🛠️",
+            "Python Developer🐍",
+            "JS Developer✨",
             "Telegram Bot Developer🚀👨‍💻",
-            "Dart and Flutter Fan🦄📱",
-            "FOSS Enthusiast🔥",
             "GNU/Linux Enthusiast🐧",
-            "AI and ML Enthusiast🤖",
+            "FOSS Lover🔥",
             "Open Source Contributor🌐",
+            "AI/ML Enthusiast🤖",
+            "Flutter Enjoyer🦄",
             "Cinephile🎬",
             "Counter Strike Player⌨️🖱️"
         ],
@@ -65,3 +65,4 @@ document.addEventListener('DOMContentLoaded', function() {
         customDialog.classList.remove('show');
     });
 });
+
