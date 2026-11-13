@@ -6,6 +6,12 @@ This is an open-source business card template. Feel free to fork this project an
 - Links to social media profiles with custom icons.
 - Responsive design for different screen sizes.
 - Easy to customize with your own information, styles, and icons.
+- Interactive terminal (`help`, `whoami`, `neofetch`, `ls projects`, …) with a first-visit boot sequence.
+- Latest GitHub repos (cached in localStorage) and Default/Dracula/Gruvbox themes.
+- A "light mode" button. Press it and see what happens.
+- Hidden terminal secrets: type `eggs` to see how many you've found.
+- No dependencies: plain HTML/CSS/JS, self-hosted fonts, respects `prefers-reduced-motion`.
+- A "Pause motion" button that freezes the decorative animations (remembered per visitor).
 
 ## Usage
 1. **Fork this repository**: Click the "Fork" button in the top-right corner of this page.

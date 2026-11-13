@@ -1,45 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="default">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>root ~#</title>
+    <title>Amirabbas Jadidi · root ~#</title>
+    <meta name="description" content="Amirabbas Jadidi — backend developer. Python, Telegram bots, GNU/Linux and FOSS.">
+    <meta name="theme-color" content="#07080a">
+    <link rel="canonical" href="https://amirabbasjadidi.ir/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Amirabbas Jadidi">
+    <meta property="og:title" content="Amirabbas Jadidi · root ~#">
+    <meta property="og:description" content="Backend developer. Python, Telegram bots, GNU/Linux and FOSS.">
+    <meta property="og:url" content="https://amirabbasjadidi.ir/">
+    <meta property="og:image" content="https://amirabbasjadidi.ir/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Amirabbas Jadidi — backend developer, terminal-style card">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amirabbas Jadidi · root ~#">
+    <meta name="twitter:description" content="Backend developer. Python, Telegram bots, GNU/Linux and FOSS.">
+    <meta name="twitter:image" content="https://amirabbasjadidi.ir/assets/og.png">
+
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/icons/Amirabbas.png" type="image/png">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>    
+    <script>
+        // apply saved theme before paint to avoid a flash
+        try {
+            var t = localStorage.getItem('theme');
+            if (t === 'dracula' || t === 'gruvbox') document.documentElement.dataset.theme = t;
+            if (localStorage.getItem('motion') === 'off') document.documentElement.classList.add('still');
+        } catch (e) {}
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Amirabbas Jadidi",
-        "alternateName": "امیرعباس جدیدی",
-        "url": "https://github.com/Amirabbasjadidi"
+        "jobTitle": "Backend Developer",
+        "url": "https://amirabbasjadidi.ir/",
+        "sameAs": ["https://github.com/Amirabbasjadidi", "https://t.me/amirabbasjadidi"]
     }
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Amirabbas Jadidi</h1>
-        <h2>I am a <span id="typed-text"></span></h2>
-        <div class="social-icons">
-            <a href="mailto:abbasjadidi2008@gmail.com" class="icon-link"><img src="assets/icons/mail.png" alt="Mail"></a>
-            <a href="https://github.com/Amirabbasjadidi" target="_blank" class="icon-link"><img src="assets/icons/github.png" alt="Github"></a>
-            <a href="https://t.me/amirabbasjadidi" target="_blank" class="icon-link"><img src="assets/icons/telegram.png" alt="Telegram"></a>
-            <a href="https://www.instagram.com/amirabbas._.jadidi/" target="_blank" class="icon-link"><img src="assets/icons/instagram.png" alt="Instagram"></a>
-            <a href="#" id="discord-link" class="icon-link"><img src="assets/icons/discord.png" alt="Discord"></a>
-            <a href="https://steamcommunity.com/id/Med1z/" target="_blank" class="icon-link"><img src="assets/icons/steam.png" alt="Steam"></a>
+    <a class="skip-link" href="#terminal-input">Skip to terminal</a>
+
+    <div id="boot" class="boot" hidden>
+        <pre id="boot-log" class="boot-log" aria-hidden="true"></pre>
+        <button id="boot-skip" class="btn" type="button">Skip ›</button>
+    </div>
+
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <span class="brand" aria-hidden="true">root@amirabbas:~#</span>
+        <div class="controls">
+            <button id="light-toggle" class="btn icon-btn" type="button" aria-label="Light mode" title="Light mode">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+                </svg>
+            </button>
+            <label class="sr-only" for="theme-select">Theme</label>
+            <select id="theme-select" class="btn">
+                <option value="default">Default</option>
+                <option value="dracula">Dracula</option>
+                <option value="gruvbox">Gruvbox</option>
+            </select>
         </div>
-        <div class="custom-dialog" id="my-dialog">
-            <div class="dialog-content">
-                <p id="dialog-text">Discord ID copied to clipboard!</p>
-                <button id="dialog-ok-button">OK</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="name" class="glitch" tabindex="0" aria-label="Amirabbas Jadidi">Amirabbas Jadidi</h1>
+            <p class="tagline">I am a <span id="typed-text" class="typed"></span><span class="cursor" aria-hidden="true">▋</span></p>
+
+            <nav class="social-icons" aria-label="Social links">
+                <a href="mailto:abbasjadidi2008@gmail.com" class="icon-link" aria-label="Email"><img src="assets/icons/mail.png" alt="" width="30" height="30"></a>
+                <a href="https://github.com/Amirabbasjadidi" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub"><img src="assets/icons/github.png" alt="" width="30" height="30"></a>
+                <a href="https://t.me/amirabbasjadidi" target="_blank" rel="noopener" class="icon-link" aria-label="Telegram"><img src="assets/icons/telegram.png" alt="" width="30" height="30"></a>
+                <a href="https://www.instagram.com/amirabbas._.jadidi/" target="_blank" rel="noopener" class="icon-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="" width="30" height="30"></a>
+                <a href="#" id="discord-link" class="icon-link" role="button" aria-label="Discord: copy ID"><img src="assets/icons/discord.png" alt="" width="30" height="30"></a>
+                <a href="https://steamcommunity.com/id/Med1z/" target="_blank" rel="noopener" class="icon-link" aria-label="Steam"><img src="assets/icons/steam.png" alt="" width="30" height="30"></a>
+            </nav>
+            <button id="motion-toggle" class="pill" type="button"><span class="pill-icon" aria-hidden="true">❚❚</span> <span class="pill-label">Pause motion</span></button>
+        </section>
+
+        <section class="terminal-wrap" aria-labelledby="term-title">
+            <div class="terminal" id="terminal">
+                <div class="term-bar">
+                    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                    <h2 id="term-title" class="term-title">amirabbas@os: ~</h2>
+                </div>
+                <div id="term-out" class="term-out" role="log" aria-live="polite"></div>
+                <form id="term-form" class="term-line" autocomplete="off">
+                    <label for="terminal-input" class="prompt">root@amirabbas:~#</label>
+                    <input id="terminal-input" type="text" spellcheck="false" autocapitalize="off" enterkeyhint="send" aria-describedby="term-hint">
+                </form>
             </div>
-        </div>        
-        <div class="made-by">
-            <a href="https://github.com/Amirabbasjadidi/Amirabbas-Profile" target="_blank" id="panda-link" class="icon-link">🐼</a>
-        </div>
+            <p id="term-hint" class="hint">Type <kbd>help</kbd> or tap a command:</p>
+            <div class="chips" id="chips">
+                <button type="button" class="chip">help</button>
+                <button type="button" class="chip">whoami</button>
+                <button type="button" class="chip">neofetch</button>
+                <button type="button" class="chip">ls projects</button>
+                <button type="button" class="chip">cat skills.txt</button>
+                <button type="button" class="chip">contact</button>
+                <button type="button" class="chip">clear</button>
+            </div>
+        </section>
+
+        <section class="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title"><span class="hash" aria-hidden="true">~/</span>projects</h2>
+            <div id="projects-grid" class="grid" aria-busy="true"></div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- "light mode" prank: the site never actually goes light -->
+    <button id="prank" class="prank" type="button" aria-label="Dismiss light mode joke">
+        <span class="bubble"><span class="bubble-text" aria-hidden="true"><span id="prank-text"></span><span class="cursor">▋</span></span></span>
+        <span class="mascot" aria-hidden="true">
+            <!-- original space-panda mascot -->
+            <svg viewBox="0 0 100 100" width="76" height="76">
+                <rect width="100" height="100" fill="#0b1020"/>
+                <g fill="#e8e8e8">
+                    <circle cx="14" cy="22" r="1.2"/><circle cx="24" cy="10" r="0.8"/><circle cx="88" cy="62" r="1"/>
+                    <circle cx="10" cy="64" r="0.9"/><circle cx="62" cy="8" r="0.7"/>
+                </g>
+                <ellipse class="m-ring" cx="80" cy="22" rx="12" ry="3.2" transform="rotate(-20 80 22)"/>
+                <circle class="m-planet" cx="80" cy="22" r="6.5"/>
+                <path d="M24 100 Q24 82 50 82 Q76 82 76 100Z" fill="#c9d1dc"/>
+                <rect class="m-collar" x="37" y="81" width="26" height="6" rx="3"/>
+                <circle cx="33" cy="37" r="8" fill="#141414"/><circle cx="67" cy="37" r="8" fill="#141414"/>
+                <circle cx="50" cy="54" r="22" fill="#f4f4f4"/>
+                <ellipse cx="41" cy="53" rx="6" ry="8" fill="#141414" transform="rotate(28 41 53)"/>
+                <ellipse cx="59" cy="53" rx="6" ry="8" fill="#141414" transform="rotate(-28 59 53)"/>
+                <circle class="m-eye" cx="42" cy="52" r="2.3"/><circle class="m-eye" cx="58" cy="52" r="2.3"/>
+                <ellipse cx="50" cy="62" rx="3.2" ry="2.2" fill="#141414"/>
+                <path d="M46 66 Q50 69 54 66" stroke="#141414" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle class="m-helmet" cx="50" cy="51" r="33"/>
+                <path class="m-glare" d="M27 40 A25 25 0 0 1 42 25"/>
+            </svg>
+        </span>
+    </button>
+    <p id="prank-sr" class="sr-only" aria-live="polite"></p>
+
+    <div class="made-by">
+        <a href="https://github.com/Amirabbasjadidi/Amirabbas-Profile" target="_blank" rel="noopener" id="panda-link" aria-label="Source code of this site on GitHub">🐼</a>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
